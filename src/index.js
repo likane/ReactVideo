@@ -5,9 +5,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const App = function () {
+const API_KEY = "AIzaSyCjvtL8Og-6jmUz4_DHroBIFDUoNcWz_PY";
+
+const App =  () => {
 	return <div>HI!</div>;
 
 }
 
-ReactDOM.render(<App />, );
+ReactDOM.render(<App />, document.querySelector('.container'));
+
+//last tut: 13
