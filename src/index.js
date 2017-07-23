@@ -22,6 +22,10 @@ class App extends Component  {
 			selectedVideo: null 
 		};
 
+		this.videoSearch('surfboards');
+	}
+
+	videoSearch(term) {
 		YTSearch({key: API_KEY, term: 'surboards'}, (videos) => {
 			this.setState({
 				videos: videos,
@@ -30,6 +34,7 @@ class App extends Component  {
 
 			//this.setState({videos: videos});
 		});
+
 	}
 
 	render() {
@@ -38,7 +43,7 @@ class App extends Component  {
 
 			<div>
 				
-				<SearchBar />
+				<SearchBar onSearchTermChange={term=>this.videoSearch(term)} />
 				<VideoDetail  video={this.state.selectedVideo} />
 				<VideoList 
 				onVideoSelect={selectedVideo => this.setState({selectedVideo})}
@@ -54,4 +59,4 @@ class App extends Component  {
 
 ReactDOM.render(<App />, document.querySelector('.container'));
 
-//last tut: 28
+//last tut: 31
